@@ -1,2 +1,2 @@
 # DARAN
-Dynamic Amateur Radio Area Network
+Dynamic, Amateur, Radio Area Network
