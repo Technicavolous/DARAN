@@ -116,7 +116,9 @@ Two such units will be used in each node. One unit would be equipped with the 5 
 
 **NOTE:** This hardware will probably not be implemented as KG4YDW suggests using <a title="Direwolf" href="https://github.com/wb2osz/direwolf" target="_blank" rel="noopener noreferrer">Direwolf</a> as a software TNC. Indeed it offers a lot of functionality that will be useful to the project.
 
-**Controllers -** Each node will have a 'controller' fashioned from a Raspberry Pi type Single Board Computer. These SBC's will operate the radios, TNC, sensors and power controller. They will do so under the supervision of the Primary Server. Currently, we're using variants that have the same IO pinout as the Raspberry Pi and are supported by the Armbian operating system. The <a title="Tinkerboard" href="https://www.asus.com/us/Single-Board-Computer/Tinker-Board/" target="_blank" rel="noopener noreferrer">Asus Tinkerboard</a> was seriously considered for the project but is somewhat expensive. The <a title="Odroid C2" href="https://www.hardkernel.com/shop/odroid-c2/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid C2</a> was ultimately chosen as it has excellent support from the manufacturer and  several third parties and is priced competitively with the Raspberry Pi. Several other Armbian supported boards appear to be appropriate as well. The decision to use Armbian will be discussed in the Software section.
+**Processors -** Each node will have a Raspberry Pi *type* Single Board Computer. These SBC's will operate the radios, TNC, sensors, audio devices and power controller. They will do so under the supervision of the Primary Server. Currently, we're using variants that have the same IO pinout as the Raspberry Pi and are supported by the Armbian operating system. The <a title="Tinkerboard" href="https://www.asus.com/us/Single-Board-Computer/Tinker-Board/" target="_blank" rel="noopener noreferrer">Asus Tinkerboard</a> was seriously considered for the project but is somewhat expensive. The <a title="Odroid C2" href="https://www.hardkernel.com/shop/odroid-c2/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid C2</a> (or th newer C4) is bing considered as it has excellent support from the manufacturer and  several third parties and is priced competitively with the Raspberry Pi. Several other Armbian supported boards appear to be appropriate as well. The decision to use Armbian will be discussed in the Software section.
+
+**Controllers -** Nodes need audio and IO controllers in addition to the SBC. USB audio, fePi audio, and other audio and GPIO boards will be necessary to control the hardware. The Pi Repeater 2x is an excellent choice for a controller as it is already built for the RPi and repeater audio / GPIO.
 
 **NOTE:** Now that Armbian supports RPi4, we will most likely use that platform along with the Pi2X controller.
 
@@ -134,7 +136,7 @@ Two such units will be used in each node. One unit would be equipped with the 5 
 
 **Audio -** Since we are linking other radios we need to avoid any audio processing. Any processing should be done on the originating and destination stations. The RS-UV3A radios have good audio input and output hardware built in. All that would theoretically be necessary are the cables to interconnect them. Most of the control over audio will be in software. 
 
-However, we will from time to time wish to inject audio to the stream, or 'announce' various information on the air. Audio can be input and output from a USB sound adapter or other mixing device. (this section needs significant information added – Pi Repeater 2x)  
+However, we will from time to time wish to inject audio to the stream, or 'announce' various information on the air. Audio can be input and output from a USB sound adapter or other mixing device. *(this section needs significant information added – Pi Repeater 2x)*
 
 **USB Sound Device   -** see ICX Pi Repeater 2x. Nodes can be constructed using USB sound equipment or the integrated Pi2X controller.
 
@@ -143,32 +145,26 @@ However, we will from time to time wish to inject audio to the stream, or 'annou
 **Primary and Secondary -** Server hardware is a <a title="Odroid HC1" href="https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid HC1</a> with a 128 GB SSD. It is inexpensive and extremely powerful. Including the SSD the cost of this unit is under $100. It has excellent ethernet speed and processing power. It is using Armbian as the operating system and is currently hosted by the <a title="Tech Party" href="http://www.tech-party.us" target="_blank" rel="noopener noreferrer">Central Florida Tech Party</a> on their system at <a title="Lilly's On The Lake" href="https://lillysonthelake.com/" target="_blank" rel="noopener noreferrer">Lilly's On The Lake</a>. This hardware is serving the page you are reading now.
 
 
-### Interconnections
+## Interconnections
 
 **Internet -** Each station can have a low data connection for direct connect to the internet. Packet will be the preferred method but one node needs to be connected. <a href="https://store.gl-inet.com/collections/travel-routers/products/gl-mifi-4g-smart-router" target="_blank" rel="noopener noreferrer">GL-Inet has a 'MiFi'</a> router and <a href="https://www.choiceiot.com/connectivity-services/iot-m2m-connectivity/" target="_blank" rel="noopener noreferrer">Choice</a> has low bandwidth inexpensive plans that would accommodate the requirement.
 
 
-CNRLS – Software
+#### CNRLS – Software
 
-Crossband Node Repeater Linking System – Software
-
-In this section of my 'White Paper' on the Crossband Node Repeater Linking System I discuss the needs of the software that will run the system. This will be largely abstract with some sudocode and flowcharting. Actual code will be placed on the <a title="Wiki Article" href="wiki/doku.php" target="_blank" rel="noopener noreferrer">Wiki</a> and discussed in the forums. (currently the forum is damaged and will be available once the new 147120.net server is built) 
-
-This section will be growing daily as I read more about how Python interacts with hardware on the web. There are a lot of ways to communicate between hardware, have hardware write to a database, and display database information on a web page. This paper and comments within it will determine those methods and packages. I am depending heavily on guidance from the group to complete this section. 
-
-Anyone experienced in Python server programming please contact me if you're interested in pitching in.
+### Crossband Node Repeater Linking System – Software 
  
-Common Components
-Both Server and Node will be constructed using similar Operating System and software. The details of this section must adhere to the details in the 'Operation' section of this paper.
+**Common Components -** Both Server and Node will be constructed using similar Operating System and software. The details of this section must adhere to the details in the 'Operation' section of this paper.
 
-Operating System
-Both the server and node controllers will support the <a title="Armbian OS" href="https://www.armbian.com" target="_blank" rel="noopener noreferrer">Armbian</a> operating system. It is based on Debian and fairly optimized for the board it is implemented on. This is not an absolute necessity but support will only be given on this platform. A number of the boards supported by Armbian have identical GPIO outputs to the RPi and others have special signaling available. In any case, more than adequate IO information is available on any board chosen.
+**Operating System -** Both the server and node controllers will support the <a title="Armbian OS" href="https://www.armbian.com" target="_blank" rel="noopener noreferrer">Armbian</a> operating system. It is based on Debian and fairly optimized for the board it is implemented on. This is not an absolute necessity but support will only be given on this platform. A number of the boards supported by Armbian have identical GPIO outputs to the RPi and others have special signaling available. In any case, more than adequate IO information is available on any board chosen.
 
-Programming Language
-Language of choice can be anything that is easy to program for internet communication. We will be using Python as it seems to be perfectly suited for SBC hardware control and data-to-graphic display via the web. Using current releases on the various SBCs should keep the Python versions compatible.
+**Programming Language -** Language of choice can be anything that is easy to program for internet communication. We will be using Python as it seems to be perfectly suited for SBC hardware control and data-to-graphic display via the web. Using current releases on the various SBCs should keep the Python versions compatible.
+
 Right now the following seems to be the place to start -Python's documentation<a href="https://docs.python.org/3/library/socketserver.html">https://docs.python.org/3/library/socketserver.html</a>
+
 What seems to be a fairly complete tutorial for server and multiple clients<a href="https://realpython.com/python-sockets/">https://realpython.com/python-sockets/</a>
-DJango seems to be the way to go with Python -<a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>
+
+**DJango** seems to be the way to go with Python -<a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>
 
 
 This guys demo is enlightening<a href="https://github.com/aschn/django-iot">https://github.com/aschn/django-iot</a>
