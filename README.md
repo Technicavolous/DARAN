@@ -1,7 +1,7 @@
 # DARAN
 ## Dynamic, Amateur, Radio Area Network
 
-The following is taken directly from articles I posted to 147120.net before the site got broken. DARAN was originally called **Crossband Node Repeater Linking System**, or CNRLS. It has since been renamed DARAN. References to CNRLS are still in the original whitepapers which are presented here. I am editing these papers for appearance, correctness, and the reality of technical change.
+The following is taken directly from articles I posted to 147120.net before the site got broken. DARAN was originally called **Crossband Node Repeater Linking System**, or CNRLS. It has since been renamed DARAN. References to CNRLS are still in the original whitepapers which are presented here. I am editing these papers for appearance, correctness, and the reality of technical change. This is a work in progress, your comments and suggestions will be taken seriously.
 
 **CNRLS** was originally conceived as a way to extend the range of a single repeater, but we quickly realized it would be a dynamic system that could extend the ranges of any repeaters within reach of CNRLS.
 
