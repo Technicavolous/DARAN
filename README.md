@@ -8,10 +8,9 @@ The following is taken directly from articles I posted to 147120.net before the 
 
 Here is part one of the 'White Paper" I promised for this Wednesdays (5 June 2019) Tech Net. I have decided to break the paper into two parts - the abstract and the details. To be honest, part of the reason is that there are a LOT of details, and the Abstract is what I need comment on in order to write some of those details. 
 
- 
+
 The Need 
 Enhance the realized geographic range of the 147.120 N4LGH repeater beyond what simply raising the elevation of the current antenna could possibly accommodate, and allow Amateurs from areas outside of the 147.120 coverage area to participate in 147.120 on-air activities.
-
 
 The Idea
 
