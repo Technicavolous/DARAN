@@ -63,23 +63,13 @@ For whatever user level is assigned, the system needs to be considerably flexibl
 Most of the system needs to be able to be controlled on the air rather than over the internet or wifi. Users need to be able to notify the system of various requests and responses and the system needs to identify itself with an Amateur call during certain operational modes.
 
 Nodes could announce their presence from time to time to allow non-connected amateurs the opportunity to locate and use the link and give instructions for its use.
+
  
-Discussion
-I would like your feedback on this abstract. I'm currently writing the details including the basic system configuration, the theory of operation including startup and communication with the servers, hardware, software, teams, financing, the works. Next week I will publish the first draft of these details and request discussion on those as well.
-
-Feel free to suggest additions, edits, corrections, etc. 
-Tracy Markham N4LGH
+### CNRLS – Operation
  
- CNRLS – Operation
+### Startup
 
-
-Crossband Node Repeater Linking System - Operation
-Here is part two of my 'White Paper' describing a repeater linking system. I have decided to break the 'Details' section into several parts. This is the description of operation. Hardware, software, locations and financing will be discussed in subsequent articles.
- 
-Startup
-
-Node 
-Upon startup each node will determine if it has a direct internet connection. If it does, it will initiate communication with the 147120.net servers, which will assign a node designation to the station. It will then tune to a frequency determined by the servers and send a 'cq' via packet radio with an announcement that it is a 'root node' with an internet connection. 
+**Node  -** Upon startup each node will determine if it has a direct internet connection. If it does, it will initiate communication with the 147120.net servers, which will assign a node designation to the station. It will then tune to a frequency determined by the servers and send a 'cq' via packet radio with an announcement that it is a 'root node' with an internet connection. 
 
 If the node lacks its own internet connection, it will tune to a predetermined frequency and listen for a cq from a root node. If none is heard in a reasonable time, it will initiate its own cq via packet radio with an announcement that it needs a connection to a root node.
 
@@ -91,17 +81,18 @@ Once the connection is established the servers will assign tasks to the nodes ac
 
 In any case, if a node receives multiple connection offers it will choose the strongest one at the highest level.
 
-Server
-A server has to initialize at least once, and any time it needs to reboot. It will read a configuration file and proceed from there. On its first boot the configuration file will have been written by hand. Subsequent intentional reboots will have written a config file according to criteria determined at reboot time.
+**Server -** A server has to initialize at least once, and any time it needs to reboot. It will read a configuration file and proceed from there. On its first boot the configuration file will have been written by hand. Subsequent intentional reboots will have written a config file according to criteria determined at reboot time.
 
 Once started the server will determine if there are any other servers running and if so, compare the configuration and determine if it is a primary or secondary server. If the server determines it is a primary server it will query existing nodes and call for any nodes not yet listed. If the server determines it is a secondary it will query the primary for the current list of nodes and verify it can communicate with them.
 
 If a server determines it is secondary but cannot communicate with the primary, it will attempt to communicate with the nodes. It will query their current configuration and compare it with the last configuration sent to it from the primary. If the nodes' configurations are different from the previous config from the primary, the secondary will instruct the nodes to configure according to the primary's last config and take over as primary. 
+
 When the original primary comes back online it will query the existing primary, accept its current config and request to take over as primary. If there are no pending operations the existing primary will transfer any current data streams and relinquish primary control. If there are pending operations, the existing primary will instruct the original primary to standby until it has completed the operation, and relinquish control once the operation is complete. If the secondary determines that the primary has lost internet connection a predetermined number of times within a predetermined period, it will request to remain primary when the malfunctioning primary comes back online and alert the administrator. 
 
 It is acceptable to have only a primary server in a small to medium CNRLS system.
  
-Operation
+### Operation
+
 Once registered with a server the nodes will report operational status and telemetered data as well as any on the air user requests. Idle mode operations will begin immediately or when programmed. 
 
 Online
