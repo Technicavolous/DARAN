@@ -48,15 +48,15 @@ While the nodes have no activity for their assigned tasks, their secondary task 
 
 ### User Interaction
 
-A user should be able to interact with the system in any of several ways, depending upon their status with the system. 
+A *user* should be able to interact with the system in any of several ways, depending upon their status with the system. 
 
 Users should be able to access a web page and see what the current configuration of the system is. They should be able to see what settings are automatic and what settings they can change and what settings they cannot. 
 
 They should be able to request certain functionality of the system and interact with or set other functionality. They should also be able to interact with the system in a limited way via DTMF, packet and digital formats.
 
-Managers of the system should be able to maintain basic functions of the system such as control operations and certain types of user requests. This interaction should be able to take place online and via packet or DTMF.
+*Managers* of the system should be able to maintain basic functions of the system such as control operations and certain types of user requests. This interaction should be able to take place online and via packet or DTMF.
 
-Administrators should be able to access any part of the system and control all aspects of its operation in any way available.
+*Administrators* should be able to access any part of the system and control all aspects of its operation in any way available.
 
 For whatever user level is assigned, the system needs to be considerably flexible in its configuration. It needs an element of automation within certain rules and some manual control over various aspects of the system. There needs to be a system of menus to facilitate the configurations and automation rules. There needs to be a basic interface for display of system status, 
 
