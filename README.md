@@ -27,7 +27,7 @@ The following is taken directly from articles I posted to 147120.net before the 
 In effect this system creates a Repeater Linking Area Network comprised of the nodes in the system. A functional RLAN will be linked through one another having one or more nodes attached to the internet for communication with the CNRLS servers. 
  
  
-(Some) Theoretical Modes of Operation
+### (Some) Theoretical Modes of Operation
 
 **Crossband Repeat -** This mode can be standalone for the node, meaning only one node location is necessary for this mode and no communication with the system servers is necessary once the mode is set. Each node in the system could conceivably operate with complete independence in this mode. The node simply listens on one band and transmits received signals on another, effectively increasing the range of handheld and mobile stations to any repeater the node is able to communicate with, much like any other cross band repeat equipment. 
 
@@ -44,9 +44,10 @@ There are other 'modes' of operation, limited only by need and imagination.
 
 While the nodes have no activity for their assigned tasks, their secondary task activities can be quite ranging. Beacon, scanning, activity reporting, signal strength readings, etc. With additional hardware, data such as temperature, pressure, and humidity can be telemetered to the CNRLS servers for later analysis. Questions we haven't thought to ask about propagation can be answered with the right queries to a database like this.
  
-(Some) Operation Notes
+### (Some) Operation Notes
 
-User Interaction
+### User Interaction
+
 A user should be able to interact with the system in any of several ways, depending upon their status with the system. 
 
 Users should be able to access a web page and see what the current configuration of the system is. They should be able to see what settings are automatic and what settings they can change and what settings they cannot. 
