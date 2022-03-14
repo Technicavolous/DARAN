@@ -29,25 +29,19 @@ In effect this system creates a Repeater Linking Area Network comprised of the n
  
 (Some) Theoretical Modes of Operation
 
-Crossband Repeat
-
-This mode can be standalone for the node, meaning only one node location is necessary for this mode and no communication with the system servers is necessary once the mode is set. Each node in the system could conceivably operate with complete independence in this mode. The node simply listens on one band and transmits received signals on another, effectively increasing the range of handheld and mobile stations to any repeater the node is able to communicate with, much like any other cross band repeat equipment. 
+**Crossband Repeat -** This mode can be standalone for the node, meaning only one node location is necessary for this mode and no communication with the system servers is necessary once the mode is set. Each node in the system could conceivably operate with complete independence in this mode. The node simply listens on one band and transmits received signals on another, effectively increasing the range of handheld and mobile stations to any repeater the node is able to communicate with, much like any other cross band repeat equipment. 
 
 
-Crossband Repeater Link
+**Crossband Repeater Link -** This name may be somewhat misleading as each node is in itself a 'crossband' system; this MODE is crossband repeater linking. This mode is also able to be standalone, linking a repeater on one band to a repeater on either of the other bands.
 
-This name may be somewhat misleading as each node is in itself a 'crossband' system; this MODE is crossband repeater linking. This mode is also able to be standalone, linking a repeater on one band to a repeater on either of the other bands.
+**In Band Repeater Link -** This mode requires at least two nodes. Since no node will have a duplexer it will take a second band to form a link between two nodes. In this mode the two nodes will work in tandem to emulate a repeater with a duplexer by using two sites and an offband link. This facilitates the linking of two repeaters in the same band. It will be most common to link either two VHF or two UHF repeaters using a 222 MHz link. 
 
-In Band Repeater Link
-
-This mode requires at least two nodes. Since no node will have a duplexer it will take a second band to form a link between two nodes. In this mode the two nodes will work in tandem to emulate a repeater with a duplexer by using two sites and an offband link. This facilitates the linking of two repeaters in the same band. It will be most common to link either two VHF or two UHF repeaters using a 222 MHz link. 
-
-Node to Node Crossband Repeat 
-This mode facilitates the linking of one or two two simplex frequencies in the same band. At least two nodes are required.
+**Node to Node Crossband Repeat  -** This mode facilitates the linking of one or two two simplex frequencies in the same band. At least two nodes are required.
 
 There are other 'modes' of operation, limited only by need and imagination. 
 
-Idle Mode Operations
+### Idle Mode Operations
+
 While the nodes have no activity for their assigned tasks, their secondary task activities can be quite ranging. Beacon, scanning, activity reporting, signal strength readings, etc. With additional hardware, data such as temperature, pressure, and humidity can be telemetered to the CNRLS servers for later analysis. Questions we haven't thought to ask about propagation can be answered with the right queries to a database like this.
  
 (Some) Operation Notes
