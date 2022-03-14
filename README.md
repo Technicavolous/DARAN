@@ -166,17 +166,28 @@ Right now the following seems to be the place to start -Python's documentation<a
 
 What seems to be a fairly complete tutorial for server and multiple clients<a href="https://realpython.com/python-sockets/">https://realpython.com/python-sockets/</a>
 
-**DJango** seems to be the way to go with Python -<a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>
+**DJango** seems to be the way to go with Python - <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>
 
 
-This guys demo is enlightening<a href="https://github.com/aschn/django-iot">https://github.com/aschn/django-iot</a>
+This guys demo is enlightening
+
+<a href="https://github.com/aschn/django-iot">https://github.com/aschn/django-iot</a>
 
 A robust example?
+
 <a href="https://github.com/electrocoder/iotdashboard">https://github.com/electrocoder/iotdashboard</a>
+
 <a href="https://iothook.com/en/">https://iothook.com/en/</a>
+
 <a href="https://iotdashboard.readthedocs.io/tr/latest/">https://iotdashboard.readthedocs.io/tr/latest/</a>
 
-SPECIFIC data from Aidafruit for Python on C2 with Armbian<a href="https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/circuitpython-odroid">https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/circuitpython-odroid</a><a href="https://cdn-learn.adafruit.com/downloads/pdf/circuitpython-libaries-linux-odroid-c2.pdf">https://cdn-learn.adafruit.com/downloads/pdf/circuitpython-libaries-linux-odroid-c2.pdf</a> (PDF version)<a href="https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/circuitpython-odroid"></a><a href="https://wiki.odroid.com/odroid-c2/application_note/gpio/wiringpi">https://wiki.odroid.com/odroid-c2/application_note/gpio/wiringpi</a> 
+SPECIFIC data from Aidafruit for Python on C2 with Armbian<a href="https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/circuitpython-odroid">https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/circuitpython-odroid</a>
+
+<a href="https://cdn-learn.adafruit.com/downloads/pdf/circuitpython-libaries-linux-odroid-c2.pdf">https://cdn-learn.adafruit.com/downloads/pdf/circuitpython-libaries-linux-odroid-c2.pdf</a> (PDF version)
+
+<a href="https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/circuitpython-odroid"></a>
+
+<a href="https://wiki.odroid.com/odroid-c2/application_note/gpio/wiringpi">https://wiki.odroid.com/odroid-c2/application_note/gpio/wiringpi</a> 
 
 The 'Eric' Pythong Programming IDE has an option to create DJango projects…
 
