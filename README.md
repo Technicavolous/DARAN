@@ -221,15 +221,6 @@ incredible amount of information here that is applicable to this project
 <a title="HamLib" href="https://hamlib.github.io/" target="_blank" rel="noopener noreferrer">HamLib</a> for rig control?
 Haven't EVEN considered what these things could tweet and so forth ... tweet current functionality? Tweet pending changes?
  
-Node
- 
-
-
-CNRLS – Node Bring Up
-
-CNRLS - node bring up
- 
-Currently using Armbian Armbian_5.86_Odroidc2_Debian_stretch_next_4.19.42
-burn sd / emmc and boot, follow firstboot procedureNew user -  c2 / cnrls01
-update / upgrade etc
-armbian-config  date / time, timezone, ntp,  etc  remote desktop
+test
+test
+test
