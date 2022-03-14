@@ -10,7 +10,6 @@ Here is part one of the 'White Paper" I promised for this Wednesdays (5 June 201
 
  
 The Need 
-
 Enhance the realized geographic range of the 147.120 N4LGH repeater beyond what simply raising the elevation of the current antenna could possibly accommodate, and allow Amateurs from areas outside of the 147.120 coverage area to participate in 147.120 on-air activities.
 
 
