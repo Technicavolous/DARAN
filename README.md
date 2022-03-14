@@ -7,35 +7,49 @@ The following is taken directly from articles I posted to 147120.net before the 
 #### Crossband Node Repeater Linking System - An Abstract for discussion
 
 Here is part one of the 'White Paper" I promised for this Wednesdays (5 June 2019) Tech Net. I have decided to break the paper into two parts - the abstract and the details. To be honest, part of the reason is that there are a LOT of details, and the Abstract is what I need comment on in order to write some of those details. 
+
  
 The Need 
+
 Enhance the realized geographic range of the 147.120 N4LGH repeater beyond what simply raising the elevation of the current antenna could possibly accommodate, and allow Amateurs from areas outside of the 147.120 coverage area to participate in 147.120 on-air activities.
 
+
 The Idea
+
 A system consisting of multiple ‘Nodes’ to link repeaters in the Amateur 2M, 1.25M, and 70CM bands, providing extended coverage to existing repeaters by ‘linking’ them together over amateur frequencies.
 
+
 The Solution
+
 Programmable multi-radio multi-band ‘nodes’ placed in such a way that each node can maintain reliable communication with at least one other node, allowing for ‘crossband’ linking of repeaters within the range of complimenting nodes.
 
+
 Benefits
+
 Repeater linking, IoT device linking, crossband repeat for handheld and mobile range extension, beaconing, propagation study and very much more.
 
 Resources
 This is an ambitious project. Even with minimal nodes, considerable resources will be necessary. While considerable, it is doable with the team that appears to be available on the 147.120 repeater group. It will require hardware, site locations, programming, representation and coordination. It will require some funding which I have provided so far and have a plan to provide further funding as we progress.
 
+
 Repeater Linking Area Network (RLAN)
+
 In effect this system creates a Repeater Linking Area Network comprised of the nodes in the system. A functional RLAN will be linked through one another having one or more nodes attached to the internet for communication with the CNRLS servers. 
+ 
  
 (Some) Theoretical Modes of Operation
 
 Crossband Repeat
+
 This mode can be standalone for the node, meaning only one node location is necessary for this mode and no communication with the system servers is necessary once the mode is set. Each node in the system could conceivably operate with complete independence in this mode. The node simply listens on one band and transmits received signals on another, effectively increasing the range of handheld and mobile stations to any repeater the node is able to communicate with, much like any other cross band repeat equipment. 
 
 
 Crossband Repeater Link
+
 This name may be somewhat misleading as each node is in itself a 'crossband' system; this MODE is crossband repeater linking. This mode is also able to be standalone, linking a repeater on one band to a repeater on either of the other bands.
 
 In Band Repeater Link
+
 This mode requires at least two nodes. Since no node will have a duplexer it will take a second band to form a link between two nodes. In this mode the two nodes will work in tandem to emulate a repeater with a duplexer by using two sites and an offband link. This facilitates the linking of two repeaters in the same band. It will be most common to link either two VHF or two UHF repeaters using a 222 MHz link. 
 
 Node to Node Crossband Repeat 
