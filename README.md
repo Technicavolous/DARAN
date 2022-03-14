@@ -101,72 +101,49 @@ The server will be listening for connections from root nodes but it will also be
 On The Air Nodes will listen for command signals via DTMF and digital control codes on predetermined frequencies. These signals will trigger the node to request operational status settings from the server. The predetermined frequencies can be looked up on the web server pages and will be announced on node frequencies depending on the current mode of operation. IE a node configured to give a simplex crossband link into the 147.120 repeater operating on 222.5 mhz might announce "147.120 crossband link listening on 222.5 mhz PL 103.5" on 147.120 mhz. The node will only initiate these announcements on an idle channel.
 
 Data accepted by the server by any means will then be processed and signaled to the nodes for operation. 
- 
- 
- 
 
- 
-Discussion
-We're going to start getting into functional details soon regarding signal code formats and data packet construction. Still, it will be sudocode and not specifically tied to any given programming language although Python appears to be the direction we're going to go.
-Comments please!!
 
-CNRLS – Hardware
+## CNRLS – Hardware
 
-Crossband Node Repeater Linking System - Hardware
-In this section of my 'White Paper' on the Crossband Node Repeater Linking System I discuss the hardware I have settled on so far. This section is pretty straightforward as I have selected components largely based on my preferences. The hardware will dictate the details of the upcoming software section.
- 
-Hardware
 There is a plethora of equipment available that would accommodate the requirements of this description; the hardware described herein seems to be adequate for the application and is financially within the range of the community targeted by the project. It is conceivable that there will be several hardware configurations depending on requirements of a particular node. For now, all nodes will be built around the same basic devices.
  
-Nodes
+**Nodes -**
 
-Radios
-The radio units used in the first prototypes an alpha production units are the <a title="RS-UV3A" href="https://www.hobbypcb.com/products/uhf-vhf-radio/rs-uv3a" target="_blank" rel="noopener noreferrer">RS-UV3A from HobbyPCB.com</a>. These units use a SOM that is used in other successful devices and has remarkable specs that are realized in operation. The devices are uniquely suited for this kind of operation. It has an option for a <a title="RS-UVPA" href="https://www.hobbypcb.com/products/uhf-vhf-radio/rs-uvpa" target="_blank" rel="noopener noreferrer">5 watt amplifier</a> add on that is capable of running all 3 bands.
+**Radios -** The radio units used in the first prototypes and alpha production units are the <a title="RS-UV3A" href="https://www.hobbypcb.com/products/uhf-vhf-radio/rs-uv3a" target="_blank" rel="noopener noreferrer">RS-UV3A from HobbyPCB.com</a>. These units use a SOM that is used in other successful devices and has remarkable specs that are realized in operation. The devices are uniquely suited for this kind of operation. It has an option for a <a title="RS-UVPA" href="https://www.hobbypcb.com/products/uhf-vhf-radio/rs-uvpa" target="_blank" rel="noopener noreferrer">5 watt amplifier</a> add on that is capable of running all 3 bands.
 
-Two such units will be used in each node. One unit would be equipped with the 5 watt amplifier and the other would run 'stock' with 250 mW output. Since most of the time one unit will be in receive and the other in transmit, only one amplifier module is necessary per node.
+Two such units will be used in each node. One unit would be equipped with the 5 watt amplifier and the other would run 'stock' with 250 mW output. Since most of the time one unit will be in receive and the other in transmit, only one amplifier module is necessary per node. EDIT: Since the amplifier also has extensive front end filtering, it may be necessary for the amplifier unit to be on both transceivers in various environments. WHile this increases cost, it increases selectivity and greatly enhances transmit capability.
 
-TNC
-Each radio in the node will have a <a title="Pi-TNC 2" href="https://nwradiosupply.com/products/tnc-pi-2" target="_blank" rel="noopener noreferrer">TNC</a> to accommodate Packet Radio digital communications. One could be adequate for communicating with nonconnected nodes but two will will facilitate a packet 'digipeater' that can be activated when convenient or required. This adds to the flexibility of the node but also allows simultaneous communications with multiple nodes.
+**TNC -** Each radio in the node will have a <a title="Pi-TNC 2" href="https://nwradiosupply.com/products/tnc-pi-2" target="_blank" rel="noopener noreferrer">TNC</a> to accommodate Packet Radio digital communications. One could be adequate for communicating with nonconnected nodes but two will will facilitate a packet 'digipeater' that can be activated when convenient or required. This adds to the flexibility of the node but also allows simultaneous communications with multiple nodes.
 
-[This hardware will probably not be implemented as KG4YDW suggests using <a title="Direwolf" href="https://github.com/wb2osz/direwolf" target="_blank" rel="noopener noreferrer">Direwolf</a> as a software TNC. Indeed it offers a lot of functionality that will be useful to the project.]
+**NOTE:** This hardware will probably not be implemented as KG4YDW suggests using <a title="Direwolf" href="https://github.com/wb2osz/direwolf" target="_blank" rel="noopener noreferrer">Direwolf</a> as a software TNC. Indeed it offers a lot of functionality that will be useful to the project.
 
+**Controllers -** Each node will have a 'controller' fashioned from a Raspberry Pi type Single Board Computer. These SBC's will operate the radios, TNC, sensors and power controller. They will do so under the supervision of the Primary Server. Currently, we're using variants that have the same IO pinout as the Raspberry Pi and are supported by the Armbian operating system. The <a title="Tinkerboard" href="https://www.asus.com/us/Single-Board-Computer/Tinker-Board/" target="_blank" rel="noopener noreferrer">Asus Tinkerboard</a> was seriously considered for the project but is somewhat expensive. The <a title="Odroid C2" href="https://www.hardkernel.com/shop/odroid-c2/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid C2</a> was ultimately chosen as it has excellent support from the manufacturer and  several third parties and is priced competitively with the Raspberry Pi. Several other Armbian supported boards appear to be appropriate as well. The decision to use Armbian will be discussed in the Software section.
 
-Controllers
-Each node will have a 'controller' fashioned from a Raspberry Pi type Single Board Computer. These SBC's will operate the radios, TNC, sensors and power controller. They will do so under the supervision of the Primary Server. Currently, we're using variants that have the same IO pinout as the Raspberry Pi and are supported by the Armbian operating system. The <a title="Tinkerboard" href="https://www.asus.com/us/Single-Board-Computer/Tinker-Board/" target="_blank" rel="noopener noreferrer">Asus Tinkerboard</a> was seriously considered for the project but is somewhat expensive. The <a title="Odroid C2" href="https://www.hardkernel.com/shop/odroid-c2/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid C2</a> was ultimately chosen as it has excellent support from the manufacturer and  several third parties and is priced competitively with the Raspberry Pi. Several other Armbian supported boards appear to be appropriate as well. The decision to use Armbian will be discussed in the Software section.
+**NOTE:** Now that Armbian supports RPi4, we will most likely use that platform along with the Pi2X controller.
 
-Sensors
-Each node will have various sensors that will be telemetered back to the servers. Sensors such as temperature, barometric pressure and humidity as well as others will be installed at each node to facilitate various propagation and field measurements at each node location. Uses for these sensors will be discussed in the Idle Mode Operations section. 
+**Sensors -** Each node will have various sensors that will be telemetered back to the servers. Sensors such as temperature, barometric pressure and humidity as well as others will be installed at each node to facilitate various propagation and field measurements at each node location. Uses for these sensors will be discussed in the Idle Mode Operations section. 
 
-Antennas
-So far the <a title="CX333" href="http://www.cometantenna.com/wp-content/uploads/2013/09/CX-333.pdf" target="_blank" rel="noopener noreferrer">Comet CX333</a> seems to be the most economic antenna that has decent gain and a reasonable price. While it is not as durable as a true 'repeater antenna' we are not a true repeater ... and most likely not to have a site as high as many repeaters. There is also a <a title="CR320B" href="https://www.diamondantenna.net/cr320bnmo.html" target="_blank" rel="noopener noreferrer">Diamond CR320B NMO</a> mount antenna that appears to be the best choice for sites that will have limited antenna capabilities. The CR320B is able to attach easily and near the transceiver location. 
+**Antennas -** So far the <a title="CX333" href="http://www.cometantenna.com/wp-content/uploads/2013/09/CX-333.pdf" target="_blank" rel="noopener noreferrer">Comet CX333</a> seems to be the most economic antenna that has decent gain and a reasonable price. While it is not as durable as a true 'repeater antenna' we are not a true repeater ... and most likely not to have a site as high as many repeaters. There is also a <a title="CR320B" href="https://www.diamondantenna.net/cr320bnmo.html" target="_blank" rel="noopener noreferrer">Diamond CR320B NMO</a> mount antenna that appears to be the best choice for sites that will have limited antenna capabilities. The CR320B is able to attach easily and near the transceiver location. 
 
-Enclosures
-Cabinetry will be dictated by the requirements of the particular node installation. Currently we are considering three cabinet configurations -
+**Enclosures -** Cabinetry will be dictated by the requirements of the particular node installation. Currently we are considering three cabinet configurations -
 
-Rack Mount
-Some locations will require rack mounting of the node equipment. The <a title="37-1U" href="https://www.circuitspecialists.com/rackmount-enclosure-37-1u.html" target="_blank" rel="noopener noreferrer">Circuit Specialist 37-1U</a> seems to be an inexpensive option. There are obviously many more options than this, please make not of any viable candidates in the comments section below.
+**Rack Mount -** Some locations will require rack mounting of the node equipment. The <a title="37-1U" href="https://www.circuitspecialists.com/rackmount-enclosure-37-1u.html" target="_blank" rel="noopener noreferrer">Circuit Specialist 37-1U</a> seems to be an inexpensive option. There are obviously many more options than this, please make not of any viable candidates in the comments section below.
 
-Shelf and Wall Mount
-Some locations will not have rack mounted equipment. Some will need the equipment mounted to a wall or left on a shelf. I have not yet explored this option.
+**Shelf and Wall Mount -** Some locations will not have rack mounted equipment. Some will need the equipment mounted to a wall or left on a shelf. I have not yet explored this option.
 
-Tower Mount
-In some circumstances the equipment will be mounted near the antenna locations or exposed to the elements. There are several options for sealed units for these cases. I have not yet explored this option.
+**Tower Mount -** In some circumstances the equipment will be mounted near the antenna locations or exposed to the elements. There are several options for sealed units for these cases. I have not yet explored this option.
 
-Audio
-Since we are linking other radios we need to avoid any audio processing. Any processing should be done on the originating and destination stations. The RS-UV3A radios have good audio input and output hardware built in. All that would theoretically be necessary are the cables to interconnect them. Most of the control over audio will be in software. 
+**Audio -** Since we are linking other radios we need to avoid any audio processing. Any processing should be done on the originating and destination stations. The RS-UV3A radios have good audio input and output hardware built in. All that would theoretically be necessary are the cables to interconnect them. Most of the control over audio will be in software. 
 
-However, we may from time to time wish to inject audio to the stream, or 'announce' various information on the air. Audio can be input and output from a USB sound adapter or other mixing device. (this section needs significant information added – Pi Repeater 2x)  
+However, we will from time to time wish to inject audio to the stream, or 'announce' various information on the air. Audio can be input and output from a USB sound adapter or other mixing device. (this section needs significant information added – Pi Repeater 2x)  
 
-USB Sound Device  
-see ICX Pi Repeater 2x
+**USB Sound Device   -** see ICX Pi Repeater 2x. Nodes can be constructed using USB sound equipment or the integrated Pi2X controller.
 
-Interconnections
+### Interconnections
 
-Internet
-Each station can have a low data connection for direct connect to the internet. Packet will be the preferred method but one node needs to be connected. <a href="https://store.gl-inet.com/collections/travel-routers/products/gl-mifi-4g-smart-router" target="_blank" rel="noopener noreferrer">GL-Inet has a 'MiFi'</a> router and <a href="https://www.choiceiot.com/connectivity-services/iot-m2m-connectivity/" target="_blank" rel="noopener noreferrer">Choice</a> has low bandwidth inexpensive plans that would accommodate the requirement.
+**Internet -** Each station can have a low data connection for direct connect to the internet. Packet will be the preferred method but one node needs to be connected. <a href="https://store.gl-inet.com/collections/travel-routers/products/gl-mifi-4g-smart-router" target="_blank" rel="noopener noreferrer">GL-Inet has a 'MiFi'</a> router and <a href="https://www.choiceiot.com/connectivity-services/iot-m2m-connectivity/" target="_blank" rel="noopener noreferrer">Choice</a> has low bandwidth inexpensive plans that would accommodate the requirement.
 
-Servers
-Primary and SecondaryServer hardware is a <a title="Odroid HC1" href="https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid HC1</a> with a 128 GB SSD. It is inexpensive and extremely powerful. Including the SSD the cost of this unit is under $100. It has excellent ethernet speed and processing power. It is using Armbian as the operating system and is currently hosted by the <a title="Tech Party" href="http://www.tech-party.us" target="_blank" rel="noopener noreferrer">Central Florida Tech Party</a> on their system at <a title="Lilly's On The Lake" href="https://lillysonthelake.com/" target="_blank" rel="noopener noreferrer">Lilly's On The Lake</a>. This hardware is serving the page you are reading now.
+**Servers -** Primary and SecondaryServer hardware is a <a title="Odroid HC1" href="https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid HC1</a> with a 128 GB SSD. It is inexpensive and extremely powerful. Including the SSD the cost of this unit is under $100. It has excellent ethernet speed and processing power. It is using Armbian as the operating system and is currently hosted by the <a title="Tech Party" href="http://www.tech-party.us" target="_blank" rel="noopener noreferrer">Central Florida Tech Party</a> on their system at <a title="Lilly's On The Lake" href="https://lillysonthelake.com/" target="_blank" rel="noopener noreferrer">Lilly's On The Lake</a>. This hardware is serving the page you are reading now.
  
 Discussion
 I would certainly entertain input on hardware different from those described here. These have been chosen largely on my experience of price vs performance. I am by no means an expert in this area ,,, Feel free to comment below!!
