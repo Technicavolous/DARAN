@@ -5,6 +5,7 @@ The following is taken directly from articles I posted to 147120.net before the 
 
 **CNRLS** was originally conceived as a way to extend the range of a single repeater, but we quickly realized it would be a dynamic system that could extend the ranges of any repeaters within reach of CNRLS.
 
+
 ## CNRLS – Abstract
 **Crossband Node Repeater Linking System - An Abstract for discussion**
 
@@ -16,14 +17,12 @@ The following is taken directly from articles I posted to 147120.net before the 
 **The Solution -** Programmable multi-radio multi-band ‘nodes’ placed in such a way that each node can maintain reliable communication with at least one other node, allowing for ‘crossband’ linking of repeaters within the range of complimenting nodes.
 
 
-#### Benefits
-Repeater linking, IoT device linking, crossband repeat for handheld and mobile range extension, beaconing, propagation study and very much more.
+**Benefits -** Repeater linking, IoT device linking, crossband repeat for handheld and mobile range extension, beaconing, propagation study and very much more.
 
-Resources
-This is an ambitious project. Even with minimal nodes, considerable resources will be necessary. While considerable, it is doable with the team that appears to be available on the 147.120 repeater group. It will require hardware, site locations, programming, representation and coordination. It will require some funding which I have provided so far and have a plan to provide further funding as we progress.
+**Resources -** This is an ambitious project. Even with minimal nodes, considerable resources will be necessary. While considerable, it is doable with the team that appears to be available on the 147.120 repeater group. It will require hardware, site locations, programming, representation and coordination. It will require some funding which I have provided so far and have a plan to provide further funding as we progress.
 
 
-Repeater Linking Area Network (RLAN)
+### Repeater Linking Area Network (RLAN)
 
 In effect this system creates a Repeater Linking Area Network comprised of the nodes in the system. A functional RLAN will be linked through one another having one or more nodes attached to the internet for communication with the CNRLS servers. 
  
