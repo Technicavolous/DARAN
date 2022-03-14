@@ -3,6 +3,8 @@
 
 The following is taken directly from articles I posted to 147120.net before the site got broken. DARAN was originally called **Crossband Node Repeater Linking System**, or CNRLS. It has since been renamed DARAN. References to CNRLS are still in the original whitepapers which are presented here. I am editing these papers for correctness, current technology and the reality of technical change.
 
+**CNRLS** was originally conceived as a way to extend the range of a single repeater, but we quickly realized it would be a dynamic system that could extend the ranges of any repeaters within reach of CNRLS.
+
 ## CNRLS – Abstract
 **Crossband Node Repeater Linking System - An Abstract for discussion**
 
@@ -12,7 +14,7 @@ Here is part one of the 'White Paper" I promised for this Wednesdays (5 June 201
 **The Need**
 Enhance the realized geographic range of the 147.120 N4LGH repeater beyond what simply raising the elevation of the current antenna could possibly accommodate, and allow Amateurs from areas outside of the 147.120 coverage area to participate in 147.120 on-air activities.
 
-The Idea
+**The Idea**
 
 A system consisting of multiple ‘Nodes’ to link repeaters in the Amateur 2M, 1.25M, and 70CM bands, providing extended coverage to existing repeaters by ‘linking’ them together over amateur frequencies.
 
