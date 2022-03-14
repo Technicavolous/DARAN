@@ -65,7 +65,7 @@ Most of the system needs to be able to be controlled on the air rather than over
 Nodes could announce their presence from time to time to allow non-connected amateurs the opportunity to locate and use the link and give instructions for its use.
 
  
-### CNRLS – Operation
+## CNRLS – Operation
  
 ### Startup
 
