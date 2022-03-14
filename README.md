@@ -19,7 +19,7 @@ Here is part one of the 'White Paper" I promised for this Wednesdays (5 June 201
 **The Solution -** Programmable multi-radio multi-band ‘nodes’ placed in such a way that each node can maintain reliable communication with at least one other node, allowing for ‘crossband’ linking of repeaters within the range of complimenting nodes.
 
 
-### Benefits
+#### Benefits
 Repeater linking, IoT device linking, crossband repeat for handheld and mobile range extension, beaconing, propagation study and very much more.
 
 Resources
