@@ -106,7 +106,7 @@ Data accepted by the server by any means will then be processed and signaled to 
 
 There is a plethora of equipment available that would accommodate the requirements of this description; the hardware described herein seems to be adequate for the application and is financially within the range of the community targeted by the project. It is conceivable that there will be several hardware configurations depending on requirements of a particular node. For now, all nodes will be built around the same basic devices.
  
-**Nodes -**
+### Nodes
 
 **Radios -** The radio units used in the first prototypes and alpha production units are the <a title="RS-UV3A" href="https://www.hobbypcb.com/products/uhf-vhf-radio/rs-uv3a" target="_blank" rel="noopener noreferrer">RS-UV3A from HobbyPCB.com</a>. These units use a SOM that is used in other successful devices and has remarkable specs that are realized in operation. The devices are uniquely suited for this kind of operation. It has an option for a <a title="RS-UVPA" href="https://www.hobbypcb.com/products/uhf-vhf-radio/rs-uvpa" target="_blank" rel="noopener noreferrer">5 watt amplifier</a> add on that is capable of running all 3 bands.
 
@@ -141,7 +141,7 @@ However, we will from time to time wish to inject audio to the stream, or 'annou
 **USB Sound Device   -** see ICX Pi Repeater 2x. Nodes can be constructed using USB sound equipment or the integrated Pi2X controller.
 
 
-## Servers
+### Servers
 **Primary and Secondary -** Server hardware is a <a title="Odroid HC1" href="https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid HC1</a> with a 128 GB SSD. It is inexpensive and extremely powerful. Including the SSD the cost of this unit is under $100. It has excellent ethernet speed and processing power. It is using Armbian as the operating system and is currently hosted by the <a title="Tech Party" href="http://www.tech-party.us" target="_blank" rel="noopener noreferrer">Central Florida Tech Party</a> on their system at <a title="Lilly's On The Lake" href="https://lillysonthelake.com/" target="_blank" rel="noopener noreferrer">Lilly's On The Lake</a>. This hardware is serving the page you are reading now.
 
 
@@ -154,9 +154,13 @@ However, we will from time to time wish to inject audio to the stream, or 'annou
  
 **Common Components -** Both Server and Node will be constructed using similar Operating System and software. The details of this section must adhere to the details in the 'Operation' section of this paper.
 
-**Operating System -** Both the server and node controllers will support the <a title="Armbian OS" href="https://www.armbian.com" target="_blank" rel="noopener noreferrer">Armbian</a> operating system. It is based on Debian and fairly optimized for the board it is implemented on. This is not an absolute necessity but support will only be given on this platform. A number of the boards supported by Armbian have identical GPIO outputs to the RPi and others have special signaling available. In any case, more than adequate IO information is available on any board chosen.
+**Operating System -** Both the server and node controllers will support the <a title="Armbian OS" href="https://www.armbian.com" target="_blank" rel="noopener noreferrer">Armbian</a> operating system. It is based on Debian and fairly optimized for the board it is implemented on. This is not an absolute necessity but support will only be given on this platform. A number of the boards supported by Armbian have nearly identical GPIO outputs to the RPi and others have special signaling available. In any case, more than adequate IO information is available on any board chosen.
 
 **Programming Language -** Language of choice can be anything that is easy to program for internet communication. We will be using Python as it seems to be perfectly suited for SBC hardware control and data-to-graphic display via the web. Using current releases on the various SBCs should keep the Python versions compatible.
+
+## Ramble
+
+The following has yet to be edited and decorated or clarity .
 
 Right now the following seems to be the place to start -Python's documentation<a href="https://docs.python.org/3/library/socketserver.html">https://docs.python.org/3/library/socketserver.html</a>
 
