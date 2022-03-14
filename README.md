@@ -138,14 +138,14 @@ However, we will from time to time wish to inject audio to the stream, or 'annou
 
 **USB Sound Device   -** see ICX Pi Repeater 2x. Nodes can be constructed using USB sound equipment or the integrated Pi2X controller.
 
+
+## Servers
+**Primary and Secondary -** Server hardware is a <a title="Odroid HC1" href="https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid HC1</a> with a 128 GB SSD. It is inexpensive and extremely powerful. Including the SSD the cost of this unit is under $100. It has excellent ethernet speed and processing power. It is using Armbian as the operating system and is currently hosted by the <a title="Tech Party" href="http://www.tech-party.us" target="_blank" rel="noopener noreferrer">Central Florida Tech Party</a> on their system at <a title="Lilly's On The Lake" href="https://lillysonthelake.com/" target="_blank" rel="noopener noreferrer">Lilly's On The Lake</a>. This hardware is serving the page you are reading now.
+
+
 ### Interconnections
 
 **Internet -** Each station can have a low data connection for direct connect to the internet. Packet will be the preferred method but one node needs to be connected. <a href="https://store.gl-inet.com/collections/travel-routers/products/gl-mifi-4g-smart-router" target="_blank" rel="noopener noreferrer">GL-Inet has a 'MiFi'</a> router and <a href="https://www.choiceiot.com/connectivity-services/iot-m2m-connectivity/" target="_blank" rel="noopener noreferrer">Choice</a> has low bandwidth inexpensive plans that would accommodate the requirement.
-
-**Servers -** Primary and SecondaryServer hardware is a <a title="Odroid HC1" href="https://www.hardkernel.com/shop/odroid-hc1-home-cloud-one/" target="_blank" rel="noopener noreferrer">Hardkernel Odroid HC1</a> with a 128 GB SSD. It is inexpensive and extremely powerful. Including the SSD the cost of this unit is under $100. It has excellent ethernet speed and processing power. It is using Armbian as the operating system and is currently hosted by the <a title="Tech Party" href="http://www.tech-party.us" target="_blank" rel="noopener noreferrer">Central Florida Tech Party</a> on their system at <a title="Lilly's On The Lake" href="https://lillysonthelake.com/" target="_blank" rel="noopener noreferrer">Lilly's On The Lake</a>. This hardware is serving the page you are reading now.
- 
-Discussion
-I would certainly entertain input on hardware different from those described here. These have been chosen largely on my experience of price vs performance. I am by no means an expert in this area ,,, Feel free to comment below!!
 
 
 CNRLS – Software
