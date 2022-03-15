@@ -211,13 +211,10 @@ Database requests
 database I/O streams
 Security?
 <a href="https://pypi.org/project/django-IoT-pki/">https://pypi.org/project/django-IoT-pki/</a> or so ...
-julia high speed data processing on the server?
-APRS for data transfer?
+julia high speed data processing on the server?  
 <a title="Direwolf" href="https://github.com/wb2osz/direwolf" target="_blank" rel="noopener noreferrer">Direwolf</a> instead of a 
 
-hardware tnc?See specifically their APRStt Gateway<a title="User Guide" href="https://github.com/wb2osz/direwolf/blob/master/doc/User-Guide.pdf" target="_blank" rel="noopener noreferrer">User Guide</a> - There is an 
-
-incredible amount of information here that is applicable to this project
+hardware tnc?See specifically their APRStt Gateway<a title="User Guide" href="https://github.com/wb2osz/direwolf/blob/master/doc/User-Guide.pdf" target="_blank" rel="noopener noreferrer">User Guide</a> - There is an incredible amount of information here that is applicable to this project  
 <a title="HamLib" href="https://hamlib.github.io/" target="_blank" rel="noopener noreferrer">HamLib</a> for rig control?
 Haven't EVEN considered what these things could tweet and so forth ... tweet current functionality? Tweet pending changes?
  
