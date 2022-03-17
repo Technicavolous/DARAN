@@ -147,7 +147,7 @@ However, we will from time to time wish to inject audio to the stream, or 'annou
 
 ### Interconnections
 
-**Internet -** Each station can have a low data connection for direct connect to the internet. Packet will be the preferred method but one node needs to be connected. <a href="https://store.gl-inet.com/collections/travel-routers/products/gl-mifi-4g-smart-router" target="_blank" rel="noopener noreferrer">GL-Inet has a 'MiFi'</a> router and <a href="https://www.choiceiot.com/connectivity-services/iot-m2m-connectivity/" target="_blank" rel="noopener noreferrer">Choice</a> has low bandwidth inexpensive plans that would accommodate the requirement.
+**Internet -** Each station can have a low data connection for direct connect to the internet. Packet will be the preferred method but one node needs to be connected. our internet supporter has low bandwidth inexpensive plans that would accommodate the requirement.
 
 
 ## CNRLS – Software
